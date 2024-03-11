@@ -8,8 +8,7 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-    - host: hit-10.local
-      http:
+    - http:
         paths:
           - path: /
             pathType: Prefix
