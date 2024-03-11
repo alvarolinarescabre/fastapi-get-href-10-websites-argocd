@@ -7,11 +7,11 @@ spec:
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: fastapi-app-get-href-from-10-websites
+      app.kubernetes.io/nameapp: fastapi-app-get-href-from-10-websites
   template:
     metadata:
       labels:
-        app: fastapi-app-get-href-from-10-websites
+        app.kubernetes.io/name: fastapi-app-get-href-from-10-websites
     spec:
       containers:
       - image: alvarolinarescabre/fastapi-app-get-href-from-10-websites:latest
