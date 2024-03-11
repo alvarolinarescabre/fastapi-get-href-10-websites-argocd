@@ -11,7 +11,7 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-    - host: gimme-10.local
+    - host: hit-10.local
       http:
         paths:
           - path: /
