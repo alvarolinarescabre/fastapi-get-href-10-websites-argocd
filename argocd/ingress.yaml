@@ -4,8 +4,8 @@ metadata:
   name: fastapi-app-get-href-from-10-websites
   annotations:
     annotations:
-    alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/target-type: ip
+      alb.ingress.kubernetes.io/scheme: internet-facing
+      alb.ingress.kubernetes.io/target-type: ip
 spec:
   ingressClassName: alb
   rules:
