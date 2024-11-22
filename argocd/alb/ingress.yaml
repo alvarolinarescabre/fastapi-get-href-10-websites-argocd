@@ -10,12 +10,20 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-    - http:
+    - host: www.holachamo.local
+      http:
         paths:
-          - path: /chamo
+          - path: /
             pathType: Prefix
             backend:
               service:
                 name: fastapi-app-get-href-from-10-websites
                 port:
                   number: 80
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: fastapi-app-get-href-from-10-websites
+  annotations:
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
