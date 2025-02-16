@@ -18,4 +18,3 @@ spec:
         name: fastapi-app-get-href-from-10-websites
         ports:
         - containerPort: 80
-        
