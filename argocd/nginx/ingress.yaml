@@ -5,15 +5,15 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
     nginx.ingress.kubernetes.io/ssl-passthrough: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
 
 spec:
   ingressClassName: nginx
   rules:
   - http:
       paths:
-        - path: /chamo/(.+)
-          pathType: Prefix
+        - path: /chamo(/|$)(.*)
+          pathType: ImplementationSpecific
           backend:
             service:
               name: fastapi-app-get-href-from-10-websites
