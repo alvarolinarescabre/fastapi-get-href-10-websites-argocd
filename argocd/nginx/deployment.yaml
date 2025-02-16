@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: fastapi-app-get-href-from-10-websites
+  annotations:
+  link.argocd.argoproj.io/external-link: http://holachamo.io/chamo
 spec:
   replicas: 1
   revisionHistoryLimit: 3
