@@ -3,7 +3,6 @@ kind: Ingress
 metadata:
   name: fastapi-app-get-href-from-10-websites
   annotations:
-    service.beta.kubernetes.io/aws-load-balancer-additional-resource-tags: "Name=ingress-nginx"
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/rewrite-target: /$2
