@@ -13,7 +13,7 @@ spec:
   rules:
   - http:
       paths:
-        - path: "/chamo(/|$)(.*)"
+        - path: /chamo(/|$)(.*)
           pathType: ImplementationSpecific
           backend:
             service:
