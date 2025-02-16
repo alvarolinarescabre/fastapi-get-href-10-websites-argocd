@@ -12,7 +12,7 @@ spec:
   - http:
       paths:
         - path: /chamo(/|$)(.*)
-          pathTypes: ImplementationSpecific
+          pathType: Prefix
           backend:
             service:
               name: fastapi-app-get-href-from-10-websites
