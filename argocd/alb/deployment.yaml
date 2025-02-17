@@ -14,7 +14,7 @@ spec:
         app.kubernetes.io/name: fastapi-app-get-href-from-10-websites
     spec:
       containers:
-      - image: alvarolinarescabre/fastapi-app-get-href-from-10-websites:latest
+      - image: ghcr.io/alvarolinarescabre/fastapi-app-get-href-from-10-websites:latest
         name: fastapi-app-get-href-from-10-websites
         ports:
         - containerPort: 80
