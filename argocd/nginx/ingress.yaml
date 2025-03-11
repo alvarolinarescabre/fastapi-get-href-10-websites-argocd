@@ -4,14 +4,13 @@ metadata:
   name: fastapi-app-get-href-from-10-websites
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
-  ingressClassName: nginx
+  ingressClassName: kong
   rules:
-  - http:
+  - host: www.chamo.local
+    http:
       paths:
-        - path: /chamo(/|$)(.*)
+        - path: /
           pathType: Prefix
           backend:
             service:
