@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: fastapi-app-get-href-from-10-websites
   annotations:
+    service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
     service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: ip
 spec:
   ports:
