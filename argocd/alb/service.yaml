@@ -4,7 +4,6 @@ metadata:
   name: fastapi-app-get-href-from-10-websites
   annotations:
     service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
-    service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: ip
 spec:
   ports:
   - port: 80
@@ -13,4 +12,4 @@ spec:
   selector:
     app.kubernetes.io/name: fastapi-app-get-href-from-10-websites
   type: LoadBalancer
-  loadBalancerClass: nlb
+  loadBalancerClass: alb
