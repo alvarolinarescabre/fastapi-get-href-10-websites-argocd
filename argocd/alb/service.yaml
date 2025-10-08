@@ -13,4 +13,4 @@ spec:
   selector:
     app.kubernetes.io/name: fastapi-app-get-href-from-10-websites
   type: LoadBalancer
-  loadBalancerClass: service.k8s.aws/nlb
+  loadBalancerClass: nlb
