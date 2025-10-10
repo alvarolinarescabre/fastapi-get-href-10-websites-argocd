@@ -3,11 +3,12 @@ kind: Ingress
 metadata:
   name: fastapi-app-get-href-from-10-websites
   annotations:
-      alb.ingress.kubernetes.io/backend-protocol: HTTP
-      alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
       alb.ingress.kubernetes.io/scheme: internet-facing
       alb.ingress.kubernetes.io/target-type: ip
-      alb.ingress.kubernetes.io/tags: Name=kc-fastapi-app-alb
+      alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80}]'
+      alb.ingress.kubernetes.io/target-group-attributes: stickiness.enabled=true
+      alb.ingress.kubernetes.io/target-group-name: fastapi-multi-cluster-tg
+      alb.ingress.kubernetes.io/load-balancer-attributes: routing.http.drop_invalid_header_fields.enabled=true
       alb.ingress.kubernetes.io/multi-cluster-target-group: "true"
 spec:
   ingressClassName: alb
