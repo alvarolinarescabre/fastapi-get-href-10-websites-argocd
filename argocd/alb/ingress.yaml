@@ -8,6 +8,7 @@ metadata:
       alb.ingress.kubernetes.io/scheme: internet-facing
       alb.ingress.kubernetes.io/target-type: ip
       alb.ingress.kubernetes.io/tags: Name=kc-fastapi-app-alb
+      alb.ingress.kubernetes.io/multi-cluster-target-group: "true"
 spec:
   ingressClassName: alb
   rules:
