@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: fastapi-app-get-href-from-10-websites
 spec:
-  replicas: 1
+  replicas: 4
   revisionHistoryLimit: 3
   selector:
     matchLabels:
