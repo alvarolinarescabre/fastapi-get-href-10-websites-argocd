@@ -1,19 +1,30 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
+kind: Gateway
+apiVersion: gateway.networking.k8s.io/v1
 metadata:
-  name: fastapi-app-get-href-from-10-websites
-  annotations:
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+  name: http
+  namespace: kgateway-system
 spec:
-  ingressClassName: nginx
+  gatewayClassName: kgateway
+  listeners:
+  - protocol: HTTP
+    port: 8080
+    name: http
+    allowedRoutes:
+      namespaces:
+        from: All
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: fastapi-get-href-10-websites-argocd
+  namespace: default
+spec:
+  parentRefs:
+    - name: http
+      namespace: kgateway-system
+  hostnames:
+    - "www.chamo.local"
   rules:
-  - host: www.chamo.local
-    http:
-      paths:
-        - path: /
-          pathType: Prefix
-          backend:
-            service:
-              name: fastapi-app-get-href-from-10-websites
-              port:
-                number: 80
+    - backendRefs:
+        - name: httpbin
+          port: 8000
