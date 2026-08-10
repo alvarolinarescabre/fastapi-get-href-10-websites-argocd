@@ -26,5 +26,5 @@ spec:
     - "www.chamo.local"
   rules:
     - backendRefs:
-        - name: httpbin
-          port: 8000
+        - name: fastapi-app-get-href-from-10-websites
+          port: 80
