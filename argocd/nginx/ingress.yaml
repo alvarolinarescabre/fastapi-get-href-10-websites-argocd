@@ -9,7 +9,7 @@ spec:
     - name: http
       namespace: kgateway-system
   hostnames:
-    - "www.chamo.test"
+    - "www.chamo.local"
   rules:
     - backendRefs:
         - name: fastapi-app-get-href-from-10-websites
