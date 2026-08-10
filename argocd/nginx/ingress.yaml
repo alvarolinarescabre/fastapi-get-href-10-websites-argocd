@@ -11,10 +11,6 @@ spec:
   hostnames:
     - "www.chamo.test"
   rules:
-    - matches:
-        - path:
-            type: PathPrefix
-            value: /
-      backendRefs:
+    - backendRefs:
         - name: fastapi-app-get-href-from-10-websites
           port: 80
